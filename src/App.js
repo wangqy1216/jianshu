@@ -1,16 +1,20 @@
 import React, { Component, Fragment } from 'react';
-import Header from './common/header';   
+import { Provider } from 'react-redux';
+import Header from './common/header';  
+import store from './store'; 
 
 import GlobalStyle from './style.js';
-import Incofont from './statics/iconfont/iconfont.js';
+import Iconfont from './statics/iconfont/iconfont.js';
 
 class App extends Component {
     render() {
         return (
             <Fragment>
                 <GlobalStyle />
-                <Incofont /> 
-                <Header />
+                <Iconfont />
+                <Provider store={store}>
+                    <Header />
+                </Provider>               
             </Fragment>
         )
     }
